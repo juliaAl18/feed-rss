@@ -9,9 +9,9 @@ const scrapingNoticias = async () => {
         const url = filtro;
         let browser = null;
 
-        const env = process.env.ENV || 'local';
+        const ENV =  process.env.ENV;
 
-        if (env === 'local') {
+        if (ENV === 'local') {
             browser = await puppeteer.launch();
         } else {
             browser = await puppeteer.launch({
